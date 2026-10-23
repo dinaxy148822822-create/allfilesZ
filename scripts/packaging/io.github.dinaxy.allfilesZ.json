@@ -1,0 +1,43 @@
+{
+  "app-id": "io.github.dinaxy148822822-create.allfilesZ",
+  "branch": "stable",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "24.08",
+  "sdk": "org.freedesktop.Sdk",
+  "base": "org.electronjs.Electron2.BaseApp",
+  "base-version": "24.08",
+  "command": "allfilesz",
+  "separate-locales": false,
+  "finish-args": [
+    "--share=ipc",
+    "--socket=x11",
+    "--socket=wayland",
+    "--socket=pulseaudio",
+    "--device=dri",
+    "--filesystem=home",
+    "--filesystem=removable",
+    "--env=ELECTRON_OZONE_PLATFORM_HINT=auto",
+    "--talk-name=org.freedesktop.Notifications"
+  ],
+  "modules": [
+    {
+      "name": "allfilesz",
+      "buildsystem": "simple",
+      "build-commands": [
+        "npm ci --offline || npm ci",
+        "npx electron-builder --linux dir",
+        "cp -r release/linux-unpacked /app/main",
+        "mkdir -p /app/bin",
+        "ln -s /app/main/allfilesz /app/bin/allfilesz",
+        "install -Dm644 build/icons/256x256.png /app/share/icons/hicolor/256x256/apps/io.github.dinaxy148822822-create.allfilesZ.png",
+        "install -Dm644 scripts/packaging/io.github.dinaxy148822822-create.allfilesZ.desktop /app/share/applications/io.github.dinaxy148822822-create.allfilesZ.desktop"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "../.."
+        }
+      ]
+    }
+  ]
+}

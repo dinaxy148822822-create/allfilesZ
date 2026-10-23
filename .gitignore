@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# build output
+release/
+dist/
+out/
+
+# tests
+tests/tmp/
+tmpchk.js
+
+# caches
+.cache/
+*.log
+npm-debug.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editors
+.vscode/
+.idea/
+*.swp
+asar-list.txt  

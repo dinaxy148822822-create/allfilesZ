@@ -1,0 +1,110 @@
+appId: io.github.dinaxy148822822-create.allfilesZ
+productName: allfilesZ
+copyright: Copyright © 2026 allfilesZ contributors (MIT)
+
+directories:
+  buildResources: build
+  output: release
+
+files:
+  - src/**/*
+  - package.json
+  - "!**/*.map"
+
+asar: true
+asarUnpack:
+  - "**/node_modules/sharp/**"
+  - "**/node_modules/@img/**"
+  - "**/node_modules/pdf-lib/**"
+
+# ship the bundled ffmpeg next to the app (outside asar — binaries can't run from inside it)
+extraResources:
+  - from: node_modules/ffmpeg-static/
+    to: ffmpeg/
+    filter:
+      - ffmpeg**
+
+npmRebuild: false
+
+compression: maximum
+
+publish:
+  provider: github
+  owner: dinaxy148822822-create
+  repo: allfilesZ
+
+win:
+  icon: build/icon.png
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  target:
+    - target: nsis
+      arch: [x64, arm64]
+    - target: portable
+      arch: [x64]
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: allfilesZ
+  artifactName: ${productName}-${version}-setup-${arch}.${ext}
+  deleteAppDataOnUninstall: false
+
+portable:
+  artifactName: ${productName}-${version}-portable-${arch}.${ext}
+
+mac:
+  icon: build/icon.png
+  category: public.app-category.utilities
+  identity: null # ad-hoc; CI builds without Apple Developer cert
+  hardenedRuntime: false
+  artifactName: ${productName}-${version}-mac-${arch}.${ext}
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  extendInfo:
+    NSDocumentsRevisionsMode: ""
+    LSSupportsOpeningDocumentsInPlace: true
+
+dmg:
+  title: ${productName} ${version}
+  window: { width: 540, height: 380 }
+
+linux:
+  icon: build/icons
+  category: Utility
+  synopsis: Convert & compress files — images, audio, video, documents, archives
+  description: >-
+    allfilesZ is a beautiful offline file converter and compressor.
+    Convert images, audio, video and documents; compress files without
+    visible quality loss; create archives and merge PDFs. 22 languages,
+    dark/light glass UI, works on X11 and Wayland.
+  mimeTypes:
+    - image/png
+    - image/jpeg
+    - audio/mpeg
+    - video/mp4
+    - application/pdf
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  target:
+    - target: AppImage
+      arch: [x64, arm64]
+    - target: deb
+      arch: [x64]
+    - target: rpm
+      arch: [x64]
+    - target: snap
+      arch: [x64]
+
+appImage:
+  license: LICENSE
+  category: Utility
+
+deb:
+  depends: []
+
+rpm:
+  depends: []

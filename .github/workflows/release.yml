@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows (x64 + arm64)
+            os: windows-latest
+            args: --win
+          - name: Linux (x64 + arm64)
+            os: ubuntu-latest
+            args: --linux
+          - name: macOS (Apple Silicon)
+            os: macos-latest
+            args: --mac --arm64
+          - name: macOS (Intel)
+            os: macos-latest
+            args: --mac --x64
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          ELECTRON_CACHE: $(pwd)/.cache/electron
+          ELECTRON_BUILDER_CACHE: $(pwd)/.cache/electron-builder
+
+      - name: Run engine tests
+        run: npm test
+
+      - name: Build & publish
+        run: npx electron-builder ${{ matrix.args }} --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

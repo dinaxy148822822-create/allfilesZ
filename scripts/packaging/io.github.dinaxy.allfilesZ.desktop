@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=allfilesZ
+Comment=Convert & compress files — images, audio, video, documents, archives
+Exec=allfilesz %U
+Terminal=false
+Type=Application
+Categories=Utility;FileTools;
+Icon=io.github.dinaxy148822822-create.allfilesZ
+StartupWMClass=allfilesZ
+MimeType=image/png;image/jpeg;image/webp;audio/mpeg;audio/x-wav;video/mp4;application/pdf;

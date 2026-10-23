@@ -1,0 +1,17 @@
+# winget manifest — submit to microsoft/winget-pkgs via `wingetcreate`
+# after each release. Reference copy for maintainers.
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.6.0.schema.json
+PackageIdentifier: dinaxy148822822-create.allfilesZ
+PackageVersion: 1.0.0
+PackageName: allfilesZ
+Publisher: dinaxy148822822-create
+License: MIT
+ShortDescription: Glassy cross-platform file converter & compressor — images, audio, video, documents, archives.
+PackageUrl: https://github.com/dinaxy148822822-create/allfilesZ
+Installers:
+  - Architecture: x64
+    InstallerType: nullsoft
+    InstallerUrl: https://github.com/dinaxy148822822-create/allfilesZ/releases/download/v1.0.0/allfilesZ-1.0.0-setup-x64.exe
+    InstallerSha256: <fill-after-release>
+ManifestType: singleton
+ManifestVersion: 1.6.0

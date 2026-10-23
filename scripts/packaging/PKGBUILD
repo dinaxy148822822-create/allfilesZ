@@ -1,0 +1,55 @@
+# Maintainer: dinaxy <https://github.com/dinaxy>
+# AUR package: allfilesz-bin (binary release, AppImage-based)
+
+pkgname=allfilesz-bin
+_pkgname=allfilesZ
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Glassy cross-platform file converter & compressor — images, audio, video, documents, archives"
+arch=('x86_64' 'aarch64')
+url="https://github.com/dinaxy/allfilesZ"
+license=('MIT')
+depends=('alsa-lib' 'atk' 'atkmm' 'cairo' 'glibc' 'gdk-pixbuf2' 'gtk3' 'gtkmm3' 'libayatana-appindicator' 'libcups' 'libdrm' 'libgcc-libs' 'libxkbcommon' 'libxcomposite' 'libxdamage' 'libxfixes' 'libxrandr' 'libxss' 'mesa' 'nss' 'pango' 'zlib')
+makedepends=()
+provides=("${pkgname%-bin}")
+conflicts=("${pkgname%-bin}")
+source_x86_64=("${_pkgname}-${pkgver}-x86_64.AppImage::${url}/releases/download/v${pkgver}/${_pkgname}-${pkgver}-x64.AppImage")
+source_aarch64=("${_pkgname}-${pkgver}-aarch64.AppImage::${url}/releases/download/v${pkgver}/${_pkgname}-${pkgver}-arm64.AppImage")
+sha256sums_x86_64=('SKIP')
+sha256sums_aarch64=('SKIP')
+
+package() {
+  local _appimage="${srcdir}/${_pkgname}-${pkgver}-${CARCH}.AppImage"
+
+  install -Dm755 "${_appimage}" "${pkgdir}/opt/${_pkgname}/${_pkgname}.AppImage"
+  install -dm755 "${pkgdir}/usr/bin"
+  ln -s "/opt/${_pkgname}/${_pkgname}.AppImage" "${pkgdir}/usr/bin/${pkgname%-bin}"
+
+  # extract icons + desktop entry from the AppImage
+  cd "${srcdir}"
+  ARCH=`uname -m` ./"${_appimage}" --appimage-extract '*.png' >/dev/null 2>&1 || true
+  ./"${_appimage}" --appimage-extract '*.desktop' >/dev/null 2>&1 || true
+
+  for size in 512 256 128 64 32; do
+    if [ -f "squashfs-root/build/icons/${size}x${size}.png" ]; then
+      install -Dm644 "squashfs-root/build/icons/${size}x${size}.png" \
+        "${pkgdir}/usr/share/icons/hicolor/${size}x${size}/apps/${pkgname%-bin}.png"
+    fi
+  done
+
+  install -Dm644 <(sed "s/^Exec=.*/Exec=${pkgname%-bin} %U/" \
+    squashfs-root/*.desktop 2>/dev/null || cat <<EOF
+[Desktop Entry]
+Name=allfilesZ
+Comment=Convert & compress files — images, audio, video, documents, archives
+Exec=${pkgname%-bin} %U
+Terminal=false
+Type=Application
+Categories=Utility;FileTools;
+Icon=${pkgname%-bin}
+StartupWMClass=allfilesZ
+EOF
+  ) "${pkgdir}/usr/share/applications/${pkgname%-bin}.desktop"
+
+  install -Dm644 "${srcdir}/../../LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE" 2>/dev/null || true
+}

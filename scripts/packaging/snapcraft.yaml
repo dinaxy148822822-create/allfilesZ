@@ -1,0 +1,60 @@
+# Snap package definition (alternative to `electron-builder --linux snap`).
+# Build locally with:  snapcraft --use-lxd
+# Publish to Snap Store via: https://snapcraft.io/allfilesz
+name: allfilesz
+title: allfilesZ
+base: core22
+version: '1.0.0'
+summary: Glassy file converter & compressor — images, audio, video, docs
+description: |
+  allfilesZ is a beautiful offline file converter and compressor for
+  Windows, Linux and macOS. Convert images, audio, video and documents;
+  compress files without visible quality loss; create archives and merge
+  PDFs. 22 languages, dark/light glass UI, X11 & Wayland native.
+
+  100% offline — your files never leave your computer.
+license: MIT
+grade: stable
+confinement: strict
+icon: build/icon.png
+architectures:
+  - build-on: amd64
+    build-for: amd64
+  - build-on: arm64
+    build-for: arm64
+
+apps:
+  allfilesz:
+    command: bin/desktop-launch
+    desktop: usr/share/applications/allfilesz.desktop
+    extensions: [gnome]
+    plugs:
+      - home
+      - removable-media
+      - network-status
+      - audio-playback
+      - unity7
+
+parts:
+  allfilesz:
+    plugin: nil
+    source: .
+    build-snaps: [node/20/latest/stable]
+    build-packages: [libsecret-dev]
+    override-build: |
+      npm ci
+      npx electron-builder --linux AppImage --$CRAFT_ARCH_BUILD_FOR
+      mkdir -p $CRAFT_PART_INSTALL/usr/lib/allfilesz
+      cp release/allfilesZ-*-linux-*.AppImage $CRAFT_PART_INSTALL/usr/lib/allfilesz/allfilesz.AppImage
+    stage-packages:
+      - libnspr4
+      - libnss3
+      - libsecret-1-0
+      - libxss1
+    prime:
+      - usr/lib/allfilesz
+  launcher:
+    plugin: dump
+    source: scripts/packaging/snap-launcher
+    organize:
+      desktop-launch: bin/desktop-launch

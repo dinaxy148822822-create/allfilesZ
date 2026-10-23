@@ -1,0 +1,4 @@
+#!/bin/bash
+# Snap launcher for allfilesZ (AppImage runs fine inside the snap's runtime)
+export APPIMAGE_EXTRACT_AND_RUN=1
+exec /usr/lib/allfilesz/allfilesz.AppImage "$@"
