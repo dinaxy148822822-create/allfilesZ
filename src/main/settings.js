@@ -17,7 +17,9 @@ const DEFAULTS = {
   archiveLevel: 6,       // 0..9
   overwritePolicy: 'keepBoth', // keepBoth | overwrite
   starred: false,        // repo-bar parody state
-  activity: {}           // ISO-date -> conversions done (activity graph)
+  activity: {},          // ISO-date -> conversions done (activity graph)
+  character: null,       // miku | teto | neru | luka | rin | gumi | null
+  bgName: null           // user background file name inside userData/background
 };
 
 function settingsPath() {

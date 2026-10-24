@@ -112,7 +112,11 @@
     "searchLanguage": "חיפוש שפה…",
     "install": "התקנה",
     "installing": "מתקין…",
-    "activity": "פעילות המרה"
+    "activity": "פעילות המרה",
+    "characterTheme": "ערכות נושא של דמויות",
+    "background": "רקע (תמונה/GIF)",
+    "chooseBg": "בחירה…",
+    "clearBg": "הסרה"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "נוצר PDF מתמונות",
     "canceled": "בוטל",
     "engineInstalled": "{name} הותקן",
-    "engineInstallFailed": "לא ניתן להתקין את {name}"
+    "engineInstallFailed": "לא ניתן להתקין את {name}",
+    "bgSet": "הרקע עודכן",
+    "bgRemoved": "הרקע הוסר"
   }
 }

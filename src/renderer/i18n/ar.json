@@ -112,7 +112,11 @@
     "searchLanguage": "ابحث عن لغة…",
     "install": "تثبيت",
     "installing": "جارٍ التثبيت…",
-    "activity": "نشاط التحويل"
+    "activity": "نشاط التحويل",
+    "characterTheme": "ثيمات الشخصيات",
+    "background": "الخلفية (صورة/GIF)",
+    "chooseBg": "اختيار…",
+    "clearBg": "إزالة"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "تم إنشاء PDF من الصور",
     "canceled": "تم الإلغاء",
     "engineInstalled": "تم تثبيت {name}",
-    "engineInstallFailed": "تعذر تثبيت {name}"
+    "engineInstallFailed": "تعذر تثبيت {name}",
+    "bgSet": "تم تحديث الخلفية",
+    "bgRemoved": "تمت إزالة الخلفية"
   }
 }

@@ -112,7 +112,11 @@
     "searchLanguage": "भाषा खोजें…",
     "install": "इंस्टॉल करें",
     "installing": "इंस्टॉल हो रहा है…",
-    "activity": "रूपांतरण गतिविधि"
+    "activity": "रूपांतरण गतिविधि",
+    "characterTheme": "किरदार थीम",
+    "background": "बैकग्राउंड (फ़ोटो/GIF)",
+    "chooseBg": "चुनें…",
+    "clearBg": "हटाएँ"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "चित्रों से PDF बनाई गई",
     "canceled": "रद्द किया गया",
     "engineInstalled": "{name} इंस्टॉल हुआ",
-    "engineInstallFailed": "{name} इंस्टॉल नहीं हो सका"
+    "engineInstallFailed": "{name} इंस्टॉल नहीं हो सका",
+    "bgSet": "बैकग्राउंड बदला गया",
+    "bgRemoved": "बैकग्राउंड हटाया गया"
   }
 }

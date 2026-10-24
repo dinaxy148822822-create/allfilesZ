@@ -112,7 +112,11 @@
     "searchLanguage": "Cari bahasa…",
     "install": "Pasang",
     "installing": "Memasang…",
-    "activity": "Aktivitas konversi"
+    "activity": "Aktivitas konversi",
+    "characterTheme": "Tema karakter",
+    "background": "Latar belakang (foto/GIF)",
+    "chooseBg": "Pilih…",
+    "clearBg": "Hapus"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "PDF dibuat dari gambar",
     "canceled": "Dibatalkan",
     "engineInstalled": "{name} terpasang",
-    "engineInstallFailed": "Gagal memasang {name}"
+    "engineInstallFailed": "Gagal memasang {name}",
+    "bgSet": "Latar diperbarui",
+    "bgRemoved": "Latar dihapus"
   }
 }

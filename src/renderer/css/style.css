@@ -16,6 +16,10 @@
   --accent-soft: rgba(88, 166, 255, 0.14);
   --accent-glow: rgba(88, 166, 255, 0.35);
 
+  /* character-theme background tints (overridden by body[data-character=…]) */
+  --char-a: rgba(88, 166, 255, 0.10);
+  --char-b: rgba(63, 185, 80, 0.07);
+
   --bg-base: #0d1117;
   --text-1: #f0f6fc;
   --text-2: #9198a1;
@@ -45,6 +49,15 @@ body[data-accent="pink"]    { --accent:#f472b6; --accent-soft:rgba(244,114,182,.
 body[data-accent="blue"]    { --accent:#58a6ff; --accent-soft:rgba(88,166,255,.14);  --accent-glow:rgba(88,166,255,.35); }
 body[data-accent="green"]   { --accent:#3fb950; --accent-soft:rgba(63,185,80,.14);   --accent-glow:rgba(63,185,80,.35); }
 body[data-accent="orange"]  { --accent:#f0883e; --accent-soft:rgba(240,136,62,.14);  --accent-glow:rgba(240,136,62,.35); }
+
+/* ------------------------------------------- character themes (anime) -----
+   Each character overrides the accent + background tint of the app. */
+body[data-character="miku"] { --accent:#39c5bb; --accent-soft:rgba(57,197,187,.16);  --accent-glow:rgba(57,197,187,.4);  --char-a:rgba(57,197,187,.20);  --char-b:rgba(124,232,255,.12); }
+body[data-character="teto"] { --accent:#f45c87; --accent-soft:rgba(244,92,135,.16);  --accent-glow:rgba(244,92,135,.4);  --char-a:rgba(244,92,135,.18);   --char-b:rgba(255,122,89,.10); }
+body[data-character="neru"] { --accent:#f0d44a; --accent-soft:rgba(240,212,74,.16);  --accent-glow:rgba(240,212,74,.4);  --char-a:rgba(249,224,0,.15);     --char-b:rgba(255,167,38,.10); }
+body[data-character="luka"] { --accent:#f4a7c3; --accent-soft:rgba(244,167,195,.16); --accent-glow:rgba(244,167,195,.4); --char-a:rgba(244,167,195,.18);  --char-b:rgba(186,151,255,.13); }
+body[data-character="rin"]  { --accent:#ffb13d; --accent-soft:rgba(255,177,61,.16);  --accent-glow:rgba(255,177,61,.4);  --char-a:rgba(255,177,61,.18);    --char-b:rgba(255,220,100,.10); }
+body[data-character="gumi"] { --accent:#a8d33c; --accent-soft:rgba(168,211,60,.16);  --accent-glow:rgba(168,211,60,.4);  --char-a:rgba(168,211,60,.15);    --char-b:rgba(126,217,87,.12); }
 
 /* ------------------------------------------------------------- light theme */
 body[data-theme="light"] {
@@ -91,8 +104,8 @@ a:hover { text-decoration: underline; }
 #bgfx::before {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(1100px 700px at 88% -8%, rgba(88, 166, 255, 0.10), transparent 60%),
-    radial-gradient(900px 620px at -8% 108%, rgba(63, 185, 80, 0.07), transparent 60%),
+    radial-gradient(1100px 700px at 88% -8%, var(--char-a), transparent 60%),
+    radial-gradient(900px 620px at -8% 108%, var(--char-b), transparent 60%),
     linear-gradient(170deg, #0d1117 0%, #0d1117 60%, #010409 100%);
 }
 body[data-theme="light"] #bgfx::before {
@@ -105,6 +118,19 @@ body[data-theme="light"] #bgfx::before {
   position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.22;
   mix-blend-mode: screen;
   animation: drift 36s var(--ease) infinite alternate;
+}
+/* user background (photo or animated GIF) — sits between the gradient and the orbs */
+#userbg {
+  position: absolute; inset: 0; display: none;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+}
+#userbg.on { display: block; }
+#userbg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13, 17, 23, 0.42), rgba(13, 17, 23, 0.62));
+}
+body[data-theme="light"] #userbg::after {
+  background: linear-gradient(180deg, rgba(246, 248, 250, 0.42), rgba(246, 248, 250, 0.64));
 }
 body[data-theme="light"] .orb { mix-blend-mode: multiply; opacity: 0.12; }
 .orb-a { width: 520px; height: 520px; left: -140px; top: -120px; background: radial-gradient(circle, var(--accent-glow), transparent 70%); }
@@ -461,6 +487,24 @@ body[data-theme="light"] select option { background: #fff; color: #1f2328; }
 }
 .swatch:hover { transform: scale(1.15); }
 .swatch.active { border-color: var(--text-1); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 35%, transparent); }
+
+/* ---------- character theme cards (anime) ---------- */
+.char-themes { display: grid; grid-template-columns: repeat(auto-fill, minmax(126px, 1fr)); gap: 8px; padding: 4px 0 8px; }
+.char-card {
+  display: flex; align-items: center; gap: 9px;
+  padding: 8px 10px; border-radius: var(--radius-md);
+  background: var(--glass); border: 1px solid var(--glass-border);
+  cursor: pointer; color: var(--text-2); font-size: 12px; font-weight: 600;
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.char-card:hover { transform: translateY(-1px); color: var(--text-1); border-color: var(--c1); }
+.char-card.active { color: var(--text-1); border-color: var(--c1); background: var(--glass-strong); box-shadow: 0 0 0 3px color-mix(in srgb, var(--c1) 22%, transparent); }
+.char-card .char-swatch {
+  width: 20px; height: 20px; border-radius: 50%; flex: none;
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+  box-shadow: 0 0 8px color-mix(in srgb, var(--c1) 55%, transparent);
+}
+.char-card .char-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .engine-list { display: flex; flex-direction: column; gap: 8px; }
 .engine { display: flex; align-items: center; gap: 10px; font-size: 13px; }
 .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }

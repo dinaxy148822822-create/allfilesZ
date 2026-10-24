@@ -112,7 +112,11 @@
     "searchLanguage": "Hledat jazyk…",
     "install": "Nainstalovat",
     "installing": "Instalace…",
-    "activity": "Aktivita převodů"
+    "activity": "Aktivita převodů",
+    "characterTheme": "Témata postav",
+    "background": "Pozadí (foto/GIF)",
+    "chooseBg": "Vybrat…",
+    "clearBg": "Odebrat"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "PDF vytvořen z obrázků",
     "canceled": "Zrušeno",
     "engineInstalled": "{name} nainstalován",
-    "engineInstallFailed": "Nepodařilo se nainstalovat: {name}"
+    "engineInstallFailed": "Nepodařilo se nainstalovat: {name}",
+    "bgSet": "Pozadí aktualizováno",
+    "bgRemoved": "Pozadí odebráno"
   }
 }

@@ -112,7 +112,11 @@
     "searchLanguage": "Sök språk…",
     "install": "Installera",
     "installing": "Installerar…",
-    "activity": "Konverteringsaktivitet"
+    "activity": "Konverteringsaktivitet",
+    "characterTheme": "Karaktärsteman",
+    "background": "Bakgrund (foto/GIF)",
+    "chooseBg": "Välj…",
+    "clearBg": "Ta bort"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "PDF skapad från bilder",
     "canceled": "Avbruten",
     "engineInstalled": "{name} installerad",
-    "engineInstallFailed": "Kunde inte installera {name}"
+    "engineInstallFailed": "Kunde inte installera {name}",
+    "bgSet": "Bakgrund uppdaterad",
+    "bgRemoved": "Bakgrund borttagen"
   }
 }

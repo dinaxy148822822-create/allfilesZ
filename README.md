@@ -26,9 +26,11 @@ with a glassmorphism UI that blends **macOS elegance** with the **Hyprland** des
 
 ## Features
 
-- 🎨 **macOS × Hyprland UI** — frameless window with traffic lights, frosted-glass panels,
+- 🎨 **macOS × Hyprland × GitHub UI** — frameless window with traffic lights, frosted-glass panels,
   animated gradient orbs, 6 accent colors, dark/light/auto themes. Native acrylic blur on
   Windows 11, vibrancy on macOS, native Wayland (X11 fallback) on Linux — KDE, GNOME, Hyprland, Sway friendly.
+- 🌸 **Anime character themes** — Hatsune Miku, Kasane Teto, Akita Neru, Megurine Luka,
+  Kagamine Rin, GUMI; plus **your own background** (photo or animated GIF).
 - 🖼 **Convert images** — PNG · JPG · WebP · AVIF · TIFF · GIF · ICO · PDF *(sharp/libvips, HEIC/BMP/SVG input)*
 - 🎵 **Convert audio** — MP3 · WAV · OGG · OPUS · FLAC · M4A · AAC · WMA *(bundled ffmpeg — 20+ input formats)*
 - 🎬 **Convert video** — MP4 · MKV · WebM · AVI · MOV · animated GIF *(H.264, VP9, per-file progress)*

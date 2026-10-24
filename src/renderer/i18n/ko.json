@@ -112,7 +112,11 @@
     "searchLanguage": "언어 검색…",
     "install": "설치",
     "installing": "설치 중…",
-    "activity": "변환 활동"
+    "activity": "변환 활동",
+    "characterTheme": "캐릭터 테마",
+    "background": "배경 (사진/GIF)",
+    "chooseBg": "선택…",
+    "clearBg": "제거"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "이미지에서 PDF를 만들었습니다",
     "canceled": "취소되었습니다",
     "engineInstalled": "{name} 설치됨",
-    "engineInstallFailed": "{name} 설치 실패"
+    "engineInstallFailed": "{name} 설치 실패",
+    "bgSet": "배경이 업데이트됨",
+    "bgRemoved": "배경이 제거됨"
   }
 }

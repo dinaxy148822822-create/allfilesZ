@@ -112,7 +112,11 @@
     "searchLanguage": "言語を検索…",
     "install": "インストール",
     "installing": "インストール中…",
-    "activity": "変換アクティビティ"
+    "activity": "変換アクティビティ",
+    "characterTheme": "キャラクターテーマ",
+    "background": "背景（写真/GIF）",
+    "chooseBg": "選択…",
+    "clearBg": "削除"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "画像から PDF を作成しました",
     "canceled": "キャンセルしました",
     "engineInstalled": "{name} をインストールしました",
-    "engineInstallFailed": "{name} をインストールできませんでした"
+    "engineInstallFailed": "{name} をインストールできませんでした",
+    "bgSet": "背景を更新しました",
+    "bgRemoved": "背景を削除しました"
   }
 }

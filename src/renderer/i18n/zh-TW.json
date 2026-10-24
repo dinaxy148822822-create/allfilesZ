@@ -112,7 +112,11 @@
     "searchLanguage": "搜尋語言…",
     "install": "安裝",
     "installing": "安裝中…",
-    "activity": "轉換動態"
+    "activity": "轉換動態",
+    "characterTheme": "角色主題",
+    "background": "背景（圖片/GIF）",
+    "chooseBg": "選擇…",
+    "clearBg": "移除"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "已從圖片產生 PDF",
     "canceled": "已取消",
     "engineInstalled": "已安裝 {name}",
-    "engineInstallFailed": "無法安裝 {name}"
+    "engineInstallFailed": "無法安裝 {name}",
+    "bgSet": "背景已更新",
+    "bgRemoved": "背景已移除"
   }
 }

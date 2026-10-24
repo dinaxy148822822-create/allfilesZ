@@ -493,6 +493,31 @@ function applyAccent(accent, persist) {
   if (persist) saveSettings({ accent });
 }
 
+/** Character (anime) theme: overrides accent + background tints. */
+function applyCharacter(character, persist) {
+  if (character) {
+    document.body.dataset.character = character;
+  } else {
+    delete document.body.dataset.character;
+  }
+  $$('#charThemes .char-card').forEach((b) => b.classList.toggle('active', b.dataset.character === character));
+  if (persist) saveSettings({ character: character || null });
+}
+
+/** Apply a user background (photo/GIF) from a data URL. */
+function applyBackground(dataUrl) {
+  const el = $('#userbg');
+  if (dataUrl) {
+    el.style.backgroundImage = `url("${dataUrl}")`;
+    el.classList.add('on');
+    $('#btnBgClear').classList.remove('hidden');
+  } else {
+    el.style.backgroundImage = '';
+    el.classList.remove('on');
+    $('#btnBgClear').classList.add('hidden');
+  }
+}
+
 function saveSettings(patch) {
   Object.assign(state.settings, patch);
   api.settingsSet(patch);
@@ -630,9 +655,11 @@ async function init() {
   I18N.onChange(() => {});
   document.getElementById('tbTitle').textContent = I18N.t('app.name');
 
-  // --- theme & accent
+  // --- theme & accent & character
   applyTheme(state.settings.theme || 'auto');
-  applyAccent(state.settings.accent || 'teal');
+  applyAccent(state.settings.accent || 'blue');
+  applyCharacter(state.settings.character || null);
+  applyBackground(await api.bgGet());
   matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
     if ((state.settings.theme || 'auto') === 'auto') applyTheme('auto');
   });
@@ -721,8 +748,36 @@ async function init() {
 
   // --- accent
   $$('#accentSwatches .swatch').forEach((b) => {
-    b.onclick = () => applyAccent(b.dataset.accent, true);
+    b.onclick = () => {
+      applyCharacter(null, false);
+      applyAccent(b.dataset.accent, true);
+    };
   });
+
+  // --- character (anime) themes
+  $$('#charThemes .char-card').forEach((b) => {
+    b.onclick = () => {
+      const next = document.body.dataset.character === b.dataset.character ? null : b.dataset.character;
+      applyCharacter(next, true);
+      if (next) applyAccent(document.body.dataset.accent || 'blue', false); // keep swatch states fresh
+    };
+  });
+
+  // --- user background (photo/GIF)
+  $('#btnBgSet').onclick = async () => {
+    const res = await api.bgChoose();
+    if (!res || res.ok === false) {
+      if (res && res.error) toast('err', I18N.t('toast.bgSet'), res.error);
+      return;
+    }
+    applyBackground(res.dataUrl);
+    toast('ok', I18N.t('toast.bgSet'));
+  };
+  $('#btnBgClear').onclick = async () => {
+    await api.bgClear();
+    applyBackground(null);
+    toast('info', I18N.t('toast.bgRemoved'));
+  };
 
   // --- language menus
   $('#btnLang').onclick = (e) => { e.stopPropagation(); $('#langMenu').classList.contains('hidden') ? openLangMenu() : closeLangMenu(); };

@@ -112,7 +112,11 @@
     "searchLanguage": "Rechercher une langue…",
     "install": "Installer",
     "installing": "Installation…",
-    "activity": "Activité de conversion"
+    "activity": "Activité de conversion",
+    "characterTheme": "Thèmes de personnages",
+    "background": "Arrière-plan (photo/GIF)",
+    "chooseBg": "Choisir…",
+    "clearBg": "Retirer"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "PDF créé à partir d'images",
     "canceled": "Annulé",
     "engineInstalled": "{name} installé",
-    "engineInstallFailed": "Impossible d’installer {name}"
+    "engineInstallFailed": "Impossible d’installer {name}",
+    "bgSet": "Arrière-plan mis à jour",
+    "bgRemoved": "Arrière-plan retiré"
   }
 }

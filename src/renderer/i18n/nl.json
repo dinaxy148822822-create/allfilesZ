@@ -112,7 +112,11 @@
     "searchLanguage": "Taal zoeken…",
     "install": "Installeren",
     "installing": "Installeren…",
-    "activity": "Conversie-activiteit"
+    "activity": "Conversie-activiteit",
+    "characterTheme": "Personage-thema’s",
+    "background": "Achtergrond (foto/GIF)",
+    "chooseBg": "Kiezen…",
+    "clearBg": "Verwijderen"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "PDF van afbeeldingen gemaakt",
     "canceled": "Geannuleerd",
     "engineInstalled": "{name} geïnstalleerd",
-    "engineInstallFailed": "Kan {name} niet installeren"
+    "engineInstallFailed": "Kan {name} niet installeren",
+    "bgSet": "Achtergrond bijgewerkt",
+    "bgRemoved": "Achtergrond verwijderd"
   }
 }

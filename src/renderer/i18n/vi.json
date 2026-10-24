@@ -112,7 +112,11 @@
     "searchLanguage": "Tìm ngôn ngữ…",
     "install": "Cài đặt",
     "installing": "Đang cài đặt…",
-    "activity": "Hoạt động chuyển đổi"
+    "activity": "Hoạt động chuyển đổi",
+    "characterTheme": "Chủ đề nhân vật",
+    "background": "Nền (ảnh/GIF)",
+    "chooseBg": "Chọn…",
+    "clearBg": "Xóa"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "Đã tạo PDF từ ảnh",
     "canceled": "Đã hủy",
     "engineInstalled": "Đã cài đặt {name}",
-    "engineInstallFailed": "Không thể cài đặt {name}"
+    "engineInstallFailed": "Không thể cài đặt {name}",
+    "bgSet": "Đã đổi nền",
+    "bgRemoved": "Đã xóa nền"
   }
 }

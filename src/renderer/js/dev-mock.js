@@ -95,6 +95,20 @@
       await sleep(1500);
       return { ok: true, tools: { ffmpeg: { found: true }, libreoffice: { found: engine === 'libreoffice' }, ghostscript: { found: true } } };
     },
+    bgChoose: async () => {
+      // demo: generate a teal→pink gradient "wallpaper" data URL
+      const c = document.createElement('canvas');
+      c.width = 64; c.height = 64;
+      const g = c.getContext('2d').createLinearGradient(0, 0, 64, 64);
+      g.addColorStop(0, '#39c5bb');
+      g.addColorStop(1, '#f4a7c3');
+      c.getContext('2d').fillStyle = g;
+      c.getContext('2d').fillRect(0, 0, 64, 64);
+      window.__demoBg = c.toDataURL();
+      return { ok: true, dataUrl: window.__demoBg };
+    },
+    bgGet: async () => window.__demoBg || null,
+    bgClear: async () => { window.__demoBg = null; return { ok: true }; },
     cancelJob: async () => true,
     winControl: () => {},
     onProgress: (cb) => {

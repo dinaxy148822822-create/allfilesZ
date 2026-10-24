@@ -112,7 +112,11 @@
     "searchLanguage": "Dil ara…",
     "install": "Yükle",
     "installing": "Yükleniyor…",
-    "activity": "Dönüşüm etkinliği"
+    "activity": "Dönüşüm etkinliği",
+    "characterTheme": "Karakter temaları",
+    "background": "Arka plan (foto/GIF)",
+    "chooseBg": "Seç…",
+    "clearBg": "Kaldır"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "Görsellerden PDF oluşturuldu",
     "canceled": "İptal edildi",
     "engineInstalled": "{name} yüklendi",
-    "engineInstallFailed": "{name} yüklenemedi"
+    "engineInstallFailed": "{name} yüklenemedi",
+    "bgSet": "Arka plan güncellendi",
+    "bgRemoved": "Arka plan kaldırıldı"
   }
 }

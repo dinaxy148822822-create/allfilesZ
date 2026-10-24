@@ -112,7 +112,11 @@
     "searchLanguage": "Szukaj języka…",
     "install": "Zainstaluj",
     "installing": "Instalowanie…",
-    "activity": "Aktywność konwersji"
+    "activity": "Aktywność konwersji",
+    "characterTheme": "Motywy postaci",
+    "background": "Tło (zdjęcie/GIF)",
+    "chooseBg": "Wybierz…",
+    "clearBg": "Usuń"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "PDF utworzony z obrazów",
     "canceled": "Anulowano",
     "engineInstalled": "Zainstalowano: {name}",
-    "engineInstallFailed": "Nie udało się zainstalować: {name}"
+    "engineInstallFailed": "Nie udało się zainstalować: {name}",
+    "bgSet": "Tło zaktualizowane",
+    "bgRemoved": "Tło usunięte"
   }
 }

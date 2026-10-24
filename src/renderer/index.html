@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-theme="dark" data-accent="teal">
-  <!-- animated background: Hyprland-style orbs -->
+  <!-- animated background: character tints + user photo/GIF + drifting orbs -->
   <div id="bgfx" aria-hidden="true">
+    <div id="userbg"></div>
     <div class="orb orb-a"></div>
     <div class="orb orb-b"></div>
     <div class="orb orb-c"></div>
@@ -262,6 +263,24 @@
                   <button class="swatch" data-accent="blue" style="--c:#60a5fa"></button>
                   <button class="swatch" data-accent="green" style="--c:#4ade80"></button>
                   <button class="swatch" data-accent="orange" style="--c:#fb923c"></button>
+                </div>
+              </div>
+              <div class="setting-row" style="margin-bottom:2px">
+                <span data-i18n="settings.characterTheme">Character themes</span>
+              </div>
+              <div class="char-themes" id="charThemes">
+                <button class="char-card" data-character="miku" style="--c1:#39c5bb;--c2:#7ce8ff"><span class="char-swatch"></span><span class="char-name">Hatsune Miku</span></button>
+                <button class="char-card" data-character="teto" style="--c1:#f45c87;--c2:#ff7a59"><span class="char-swatch"></span><span class="char-name">Kasane Teto</span></button>
+                <button class="char-card" data-character="neru" style="--c1:#f0d44a;--c2:#ffa726"><span class="char-swatch"></span><span class="char-name">Akita Neru</span></button>
+                <button class="char-card" data-character="luka" style="--c1:#f4a7c3;--c2:#ba97ff"><span class="char-swatch"></span><span class="char-name">Megurine Luka</span></button>
+                <button class="char-card" data-character="rin"  style="--c1:#ffb13d;--c2:#ffdc64"><span class="char-swatch"></span><span class="char-name">Kagamine Rin</span></button>
+                <button class="char-card" data-character="gumi" style="--c1:#a8d33c;--c2:#7ed957"><span class="char-swatch"></span><span class="char-name">GUMI</span></button>
+              </div>
+              <div class="setting-row">
+                <span data-i18n="settings.background">Background (photo/GIF)</span>
+                <div class="row">
+                  <button class="btn ghost sm" id="btnBgSet" data-i18n="settings.chooseBg">Choose…</button>
+                  <button class="btn ghost sm hidden" id="btnBgClear" data-i18n="settings.clearBg">Remove</button>
                 </div>
               </div>
               <div class="setting-row">

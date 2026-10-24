@@ -25,9 +25,11 @@
 
 ## Возможности
 
-- 🎨 **Интерфейс macOS × Hyprland** — окно без рамки с «светофором», стеклянные панели с блюром,
+- 🎨 **Интерфейс macOS × Hyprland × GitHub** — окно без рамки с «светофором», стеклянные панели с блюром,
   анимированные градиентные орбы, 6 акцентных цветов, тёмная/светлая тема. Нативный acrylic-блюр
   в Windows 11, vibrancy на macOS, нативный Wayland (и X11) на Linux — дружелюбно к KDE, GNOME, Hyprland, Sway.
+- 🌸 **Аниме-темы персонажей** — Hatsune Miku, Kasane Teto, Akita Neru, Megurine Luka,
+  Kagamine Rin, GUMI; плюс **свой фон** (фото или анимированный GIF).
 - 🖼 **Конвертация изображений** — PNG · JPG · WebP · AVIF · TIFF · GIF · ICO · PDF
   *(sharp/libvips; на входе также HEIC, BMP, SVG)*
 - 🎵 **Конвертация аудио** — MP3 · WAV · OGG · OPUS · FLAC · M4A · AAC · WMA

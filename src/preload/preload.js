@@ -26,6 +26,9 @@ contextBridge.exposeInMainWorld('allfilesZ', {
   pdfFromImages: (payload) => ipcRenderer.invoke('pdf:from-images', payload),
   detectTools: () => ipcRenderer.invoke('tools:detect'),
   installEngine: (engine) => ipcRenderer.invoke('engines:install', { engine }),
+  bgChoose: () => ipcRenderer.invoke('bg:choose'),
+  bgGet: () => ipcRenderer.invoke('bg:get'),
+  bgClear: () => ipcRenderer.invoke('bg:clear'),
   cancelJob: (requestId) => ipcRenderer.invoke('jobs:cancel', requestId),
 
   // window controls (custom titlebar)

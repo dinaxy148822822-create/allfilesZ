@@ -144,6 +144,65 @@ module.exports = function registerIpc(_unused, getWin) {
 
   ipcMain.handle('tools:detect', () => detectAll(converter.ffmpegPath()));
 
+  // ---- user background (photo or animated GIF) -----------------------------
+  const BG_DIR = () => path.join(app.getPath('userData'), 'background');
+  const BG_MAX = 20 * 1024 * 1024; // 20 MB
+  const BG_TYPES = {
+    '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
+    '.gif': 'image/gif', '.webp': 'image/webp', '.bmp': 'image/bmp', '.avif': 'image/avif'
+  };
+
+  ipcMain.handle('bg:choose', async () => {
+    const win = getWin && getWin();
+    const r = await dialog.showOpenDialog(win, {
+      title: 'allfilesZ — background',
+      properties: ['openFile'],
+      filters: [{ name: 'Images / GIF', extensions: ['png', 'jpg', 'jpeg', 'gif', 'webp', 'bmp', 'avif'] }]
+    });
+    if (r.canceled || !r.filePaths.length) return { ok: false, canceled: true };
+    const src = r.filePaths[0];
+    try {
+      const st = fs.statSync(src);
+      if (st.size > BG_MAX) return { ok: false, error: `max ${Math.round(BG_MAX / 1024 / 1024)} MB` };
+      const ext = path.extname(src).toLowerCase();
+      if (!BG_TYPES[ext]) return { ok: false, error: 'unsupported type' };
+      fs.mkdirSync(BG_DIR(), { recursive: true });
+      const dest = path.join(BG_DIR(), `bg${ext}`);
+      fs.copyFileSync(src, dest);
+      // drop any previous background with another extension
+      for (const f of fs.readdirSync(BG_DIR())) {
+        if (f.startsWith('bg.') && path.join(BG_DIR(), f) !== dest) {
+          try { fs.unlinkSync(path.join(BG_DIR(), f)); } catch (_) { /* ignore */ }
+        }
+      }
+      setSettings({ bgName: `bg${ext}` });
+      const dataUrl = `data:${BG_TYPES[ext]};base64,${fs.readFileSync(dest).toString('base64')}`;
+      return { ok: true, dataUrl };
+    } catch (err) {
+      return { ok: false, error: friendlyError(err) };
+    }
+  });
+
+  ipcMain.handle('bg:get', () => {
+    try {
+      const name = getSettings().bgName;
+      if (!name) return null;
+      const p = path.join(BG_DIR(), name);
+      if (!fs.existsSync(p)) return null;
+      const ext = path.extname(p).toLowerCase();
+      if (!BG_TYPES[ext]) return null;
+      return `data:${BG_TYPES[ext]};base64,${fs.readFileSync(p).toString('base64')}`;
+    } catch (_) { return null; }
+  });
+
+  ipcMain.handle('bg:clear', () => {
+    try {
+      fs.rmSync(BG_DIR(), { recursive: true, force: true });
+    } catch (_) { /* ignore */ }
+    setSettings({ bgName: null });
+    return { ok: true };
+  });
+
   // One-click optional engine install (Windows): LibreOffice via winget,
   // Ghostscript via the official Artifex installer. Explicit user action —
   // the only feature that touches the network.

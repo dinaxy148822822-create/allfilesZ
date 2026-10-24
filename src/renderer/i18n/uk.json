@@ -112,7 +112,11 @@
     "searchLanguage": "Пошук мови…",
     "install": "Встановити",
     "installing": "Встановлення…",
-    "activity": "Історія конвертацій"
+    "activity": "Історія конвертацій",
+    "characterTheme": "Теми персонажів",
+    "background": "Фон (фото/GIF)",
+    "chooseBg": "Вибрати…",
+    "clearBg": "Прибрати"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -133,6 +137,8 @@
     "pdfFromImages": "PDF створено з зображень",
     "canceled": "Скасовано",
     "engineInstalled": "{name} встановлено",
-    "engineInstallFailed": "Не вдалося встановити {name}"
+    "engineInstallFailed": "Не вдалося встановити {name}",
+    "bgSet": "Фон оновлено",
+    "bgRemoved": "Фон прибрано"
   }
 }
