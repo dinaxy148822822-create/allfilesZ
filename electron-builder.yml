@@ -70,7 +70,9 @@ mac:
     LSSupportsOpeningDocumentsInPlace: true
 
 dmg:
-  title: ${productName} ${version}
+  # unique volume name per arch: parallel x64/arm64 dmg builds must not
+  # fight over the same /Volumes mount (hdiutil detach races otherwise)
+  title: ${productName}-${version}-${arch}
   window: { width: 540, height: 380 }
 
 linux:
@@ -89,14 +91,14 @@ linux:
     - video/mp4
     - application/pdf
   artifactName: ${productName}-${version}-${arch}.${ext}
+  # NOTE: snap target is intentionally NOT auto-built here — publishing to the
+  # Snap Store requires store credentials; use scripts/packaging/snapcraft.yaml
   target:
     - target: AppImage
       arch: [x64, arm64]
     - target: deb
       arch: [x64]
     - target: rpm
-      arch: [x64]
-    - target: snap
       arch: [x64]
 
 appImage:

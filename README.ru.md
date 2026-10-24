@@ -62,7 +62,7 @@
 | ОС | Формат |
 | --- | --- |
 | Windows | `allfilesZ-x.y.z-setup-x64.exe` (инсталлятор) · `allfilesZ-x.y.z-portable-x64.exe` (портативная) · arm64 |
-| Linux | `.AppImage` (x64/arm64) · `.deb` · `.rpm` · snap |
+| Linux | `.AppImage` (x64/arm64) · `.deb` · `.rpm` |
 | macOS | `.dmg` для Apple Silicon и Intel |
 
 <details open>

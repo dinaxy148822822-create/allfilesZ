@@ -59,7 +59,7 @@ Grab an installer from **[Releases](https://github.com/dinaxy148822822-create/al
 | OS | Package |
 | --- | --- |
 | Windows | `allfilesZ-x.y.z-setup-x64.exe` (installer) · `allfilesZ-x.y.z-portable-x64.exe` (portable) · arm64 installer |
-| Linux | `.AppImage` (x64/arm64) · `.deb` · `.rpm` · snap |
+| Linux | `.AppImage` (x64/arm64) · `.deb` · `.rpm` |
 | macOS | `.dmg` for Apple Silicon and Intel |
 
 ## Installation
@@ -93,8 +93,8 @@ sudo dnf install ./allfilesZ-x.y.z.x86_64.rpm
 # Arch (AUR)
 yay -S allfilesz-bin
 
-# snap (when published to the Snap Store)
-sudo snap install allfilesz
+# snap: build manually with scripts/packaging/snapcraft.yaml
+# snap: build manually with scripts/packaging/snapcraft.yaml (Snap Store submission pending)
 ```
 Optional system engines: `sudo apt install ghostscript libreoffice` unlock PDF compression and document→PDF.
 A flatpak manifest is included in [`scripts/packaging/`](scripts/packaging/) for Flathub submission.

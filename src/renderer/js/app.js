@@ -631,10 +631,10 @@ async function init() {
 
   // --- language menus
   $('#btnLang').onclick = (e) => { e.stopPropagation(); $('#langMenu').classList.contains('hidden') ? openLangMenu() : closeLangMenu(); };
-  $('#btnLangBig').onclick = () => openLangMenu();
+  $('#btnLangBig').onclick = (e) => { e.stopPropagation(); openLangMenu(); };
   $('#langSearch').oninput = (e) => renderLangList(e.target.value);
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('#langMenu') && !e.target.closest('#btnLang')) closeLangMenu();
+    if (!e.target.closest('#langMenu') && !e.target.closest('#btnLang') && !e.target.closest('#btnLangBig')) closeLangMenu();
   });
 
   // --- policy
@@ -682,7 +682,10 @@ async function init() {
       else if (state.page === 'archive') startArchive();
     }
     if (mod && e.key === ',') { e.preventDefault(); switchPage('settings'); }
-    if (e.key === 'Escape' && state.running) cancel(state.page);
+    if (e.key === 'Escape') {
+      if (!$('#langMenu').classList.contains('hidden')) { closeLangMenu(); return; }
+      if (state.running) cancel(state.page);
+    }
   });
 
   // --- demo seed (browser screenshots)

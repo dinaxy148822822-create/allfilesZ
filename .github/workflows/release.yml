@@ -23,12 +23,14 @@ jobs:
           - name: Linux (x64 + arm64)
             os: ubuntu-latest
             args: --linux
+          # one arch per mac job: parallel dmg builds on a single runner
+          # otherwise race over the same /Volumes mount
           - name: macOS (Apple Silicon)
             os: macos-latest
-            args: --mac --arm64
+            args: --mac dmg:arm64
           - name: macOS (Intel)
             os: macos-latest
-            args: --mac --x64
+            args: --mac dmg:x64
 
     steps:
       - uses: actions/checkout@v4
