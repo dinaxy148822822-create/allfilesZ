@@ -3,7 +3,7 @@
   "productName": "allfilesZ",
   "version": "1.0.0",
   "description": "Glassy cross-platform file converter & compressor for Windows, Linux and macOS — images, audio, video, documents, archives. Fully offline.",
-  "author": "allfilesZ contributors",
+  "author": "allfilesZ contributors <allfilesz@users.noreply.github.com>",
   "license": "MIT",
   "homepage": "https://github.com/dinaxy148822822-create/allfilesZ",
   "repository": {
