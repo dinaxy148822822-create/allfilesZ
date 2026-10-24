@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Français", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Convertissez et compressez tout, avec élégance" },
-  "units": { "b": "o", "kb": "Ko", "mb": "Mo", "gb": "Go", "tb": "To" },
+  "meta": {
+    "name": "Français",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Convertissez et compressez tout, avec élégance"
+  },
+  "units": {
+    "b": "o",
+    "kb": "Ko",
+    "mb": "Mo",
+    "gb": "Go",
+    "tb": "To"
+  },
   "nav": {
     "convert": "Convertir",
     "compress": "Compresser",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Ajouter des fichiers",
     "shortcutStart": "Démarrer",
     "shortcutCancel": "Annuler",
-    "searchLanguage": "Rechercher une langue…"
+    "searchLanguage": "Rechercher une langue…",
+    "install": "Installer",
+    "installing": "Installation…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Archive créée",
     "pdfMerged": "PDF fusionnés",
     "pdfFromImages": "PDF créé à partir d'images",
-    "canceled": "Annulé"
+    "canceled": "Annulé",
+    "engineInstalled": "{name} installé",
+    "engineInstallFailed": "Impossible d’installer {name}"
   }
 }

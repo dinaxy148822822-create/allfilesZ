@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Русский", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Конвертируйте и сжимайте что угодно — красиво" },
-  "units": { "b": "Б", "kb": "КБ", "mb": "МБ", "gb": "ГБ", "tb": "ТБ" },
+  "meta": {
+    "name": "Русский",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Конвертируйте и сжимайте что угодно — красиво"
+  },
+  "units": {
+    "b": "Б",
+    "kb": "КБ",
+    "mb": "МБ",
+    "gb": "ГБ",
+    "tb": "ТБ"
+  },
   "nav": {
     "convert": "Конвертер",
     "compress": "Сжатие",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Добавить файлы",
     "shortcutStart": "Запустить",
     "shortcutCancel": "Отменить",
-    "searchLanguage": "Поиск языка…"
+    "searchLanguage": "Поиск языка…",
+    "install": "Установить",
+    "installing": "Установка…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Архив создан",
     "pdfMerged": "PDF объединены",
     "pdfFromImages": "PDF создан из изображений",
-    "canceled": "Отменено"
+    "canceled": "Отменено",
+    "engineInstalled": "{name} установлен",
+    "engineInstallFailed": "Не удалось установить {name}"
   }
 }

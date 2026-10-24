@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Українська", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Конвертуйте та стискайте що завгодно — красиво" },
-  "units": { "b": "Б", "kb": "КБ", "mb": "МБ", "gb": "ГБ", "tb": "ТБ" },
+  "meta": {
+    "name": "Українська",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Конвертуйте та стискайте що завгодно — красиво"
+  },
+  "units": {
+    "b": "Б",
+    "kb": "КБ",
+    "mb": "МБ",
+    "gb": "ГБ",
+    "tb": "ТБ"
+  },
   "nav": {
     "convert": "Конвертер",
     "compress": "Стиснення",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Додати файли",
     "shortcutStart": "Запустити",
     "shortcutCancel": "Скасувати",
-    "searchLanguage": "Пошук мови…"
+    "searchLanguage": "Пошук мови…",
+    "install": "Встановити",
+    "installing": "Встановлення…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Архів створено",
     "pdfMerged": "PDF об'єднано",
     "pdfFromImages": "PDF створено з зображень",
-    "canceled": "Скасовано"
+    "canceled": "Скасовано",
+    "engineInstalled": "{name} встановлено",
+    "engineInstallFailed": "Не вдалося встановити {name}"
   }
 }

@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "العربية", "dir": "rtl" },
-  "app": { "name": "allfilesZ", "tagline": "حوّل واضغط أي شيء — بأناقة" },
-  "units": { "b": "ب", "kb": "ك.ب", "mb": "م.ب", "gb": "ج.ب", "tb": "ت.ب" },
+  "meta": {
+    "name": "العربية",
+    "dir": "rtl"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "حوّل واضغط أي شيء — بأناقة"
+  },
+  "units": {
+    "b": "ب",
+    "kb": "ك.ب",
+    "mb": "م.ب",
+    "gb": "ج.ب",
+    "tb": "ت.ب"
+  },
   "nav": {
     "convert": "تحويل",
     "compress": "ضغط",
@@ -97,7 +109,9 @@
     "shortcutAdd": "إضافة ملفات",
     "shortcutStart": "بدء",
     "shortcutCancel": "إلغاء",
-    "searchLanguage": "ابحث عن لغة…"
+    "searchLanguage": "ابحث عن لغة…",
+    "install": "تثبيت",
+    "installing": "جارٍ التثبيت…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "تم إنشاء الأرشيف",
     "pdfMerged": "تم دمج ملفات PDF",
     "pdfFromImages": "تم إنشاء PDF من الصور",
-    "canceled": "تم الإلغاء"
+    "canceled": "تم الإلغاء",
+    "engineInstalled": "تم تثبيت {name}",
+    "engineInstallFailed": "تعذر تثبيت {name}"
   }
 }

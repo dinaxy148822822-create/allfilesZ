@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Tiếng Việt", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Chuyển đổi và nén mọi thứ — thật đẹp" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "Tiếng Việt",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Chuyển đổi và nén mọi thứ — thật đẹp"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "Chuyển đổi",
     "compress": "Nén",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Thêm tệp",
     "shortcutStart": "Bắt đầu",
     "shortcutCancel": "Hủy",
-    "searchLanguage": "Tìm ngôn ngữ…"
+    "searchLanguage": "Tìm ngôn ngữ…",
+    "install": "Cài đặt",
+    "installing": "Đang cài đặt…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Đã tạo bản nén",
     "pdfMerged": "Đã gộp PDF",
     "pdfFromImages": "Đã tạo PDF từ ảnh",
-    "canceled": "Đã hủy"
+    "canceled": "Đã hủy",
+    "engineInstalled": "Đã cài đặt {name}",
+    "engineInstallFailed": "Không thể cài đặt {name}"
   }
 }

@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "日本語", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "あらゆるファイルを美しく変換・圧縮" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "日本語",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "あらゆるファイルを美しく変換・圧縮"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "変換",
     "compress": "圧縮",
@@ -97,7 +109,9 @@
     "shortcutAdd": "ファイルを追加",
     "shortcutStart": "開始",
     "shortcutCancel": "キャンセル",
-    "searchLanguage": "言語を検索…"
+    "searchLanguage": "言語を検索…",
+    "install": "インストール",
+    "installing": "インストール中…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "アーカイブを作成しました",
     "pdfMerged": "PDF を結合しました",
     "pdfFromImages": "画像から PDF を作成しました",
-    "canceled": "キャンセルしました"
+    "canceled": "キャンセルしました",
+    "engineInstalled": "{name} をインストールしました",
+    "engineInstallFailed": "{name} をインストールできませんでした"
   }
 }

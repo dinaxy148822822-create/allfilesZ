@@ -41,12 +41,29 @@ function detectLibreOffice() {
 }
 
 function detectGhostscript() {
-  return firstExisting([
-    process.platform === 'win32' ? `${PROGRAM_FILES}\\gs\\gs*\\bin\\gswin64c.exe`.replace('gs*\\bin', '') : null, // glob not supported, keep PATH fallback
+  const found = firstExisting([
+    process.platform === 'win32' ? `${PROGRAM_FILES}\\gs\\gs*\\bin\\gswin64c.exe`.replace('gs*\\bin', '') : null, // glob not supported here; scan below
     'gswin64c',
     'gswin32c',
     'gs'
   ].filter(Boolean));
+  if (found) return found;
+  // winget/installer layout: C:\Program Files\gs\gs<ver>\bin\gswin64c.exe (not always on PATH)
+  if (process.platform === 'win32') {
+    for (const root of [PROGRAM_FILES, PROGRAM_FILES_X86]) {
+      try {
+        const base = `${root}\\gs`;
+        if (!fs.existsSync(base)) continue;
+        for (const entry of fs.readdirSync(base)) {
+          for (const bin of ['gswin64c.exe', 'gswin32c.exe']) {
+            const p = `${base}\\${entry}\\bin\\${bin}`;
+            if (fs.existsSync(p)) return p;
+          }
+        }
+      } catch (_) { /* skip */ }
+    }
+  }
+  return null;
 }
 
 /**

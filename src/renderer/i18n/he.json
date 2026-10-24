@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "עברית", "dir": "rtl" },
-  "app": { "name": "allfilesZ", "tagline": "המירו ודחסו הכול — בסטייל" },
-  "units": { "b": "ב׳", "kb": "ק״ב", "mb": "מ״ב", "gb": "ג״ב", "tb": "ט״ב" },
+  "meta": {
+    "name": "עברית",
+    "dir": "rtl"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "המירו ודחסו הכול — בסטייל"
+  },
+  "units": {
+    "b": "ב׳",
+    "kb": "ק״ב",
+    "mb": "מ״ב",
+    "gb": "ג״ב",
+    "tb": "ט״ב"
+  },
   "nav": {
     "convert": "המרה",
     "compress": "דחיסה",
@@ -97,7 +109,9 @@
     "shortcutAdd": "הוספת קבצים",
     "shortcutStart": "הפעלה",
     "shortcutCancel": "ביטול",
-    "searchLanguage": "חיפוש שפה…"
+    "searchLanguage": "חיפוש שפה…",
+    "install": "התקנה",
+    "installing": "מתקין…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "הארכיון נוצר",
     "pdfMerged": "קובצי PDF מוזגו",
     "pdfFromImages": "נוצר PDF מתמונות",
-    "canceled": "בוטל"
+    "canceled": "בוטל",
+    "engineInstalled": "{name} הותקן",
+    "engineInstallFailed": "לא ניתן להתקין את {name}"
   }
 }

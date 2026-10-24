@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "简体中文", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "优雅地转换与压缩任何文件" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "简体中文",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "优雅地转换与压缩任何文件"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "转换",
     "compress": "压缩",
@@ -97,7 +109,9 @@
     "shortcutAdd": "添加文件",
     "shortcutStart": "开始任务",
     "shortcutCancel": "取消任务",
-    "searchLanguage": "搜索语言…"
+    "searchLanguage": "搜索语言…",
+    "install": "安装",
+    "installing": "安装中…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "归档已创建",
     "pdfMerged": "PDF 已合并",
     "pdfFromImages": "已从图片生成 PDF",
-    "canceled": "已取消"
+    "canceled": "已取消",
+    "engineInstalled": "已安装 {name}",
+    "engineInstallFailed": "无法安装 {name}"
   }
 }

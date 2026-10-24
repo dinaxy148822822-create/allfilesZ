@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Čeština", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Převádějte a komprimujte vše — elegantně" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "Čeština",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Převádějte a komprimujte vše — elegantně"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "Převod",
     "compress": "Komprese",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Přidat soubory",
     "shortcutStart": "Spustit",
     "shortcutCancel": "Zrušit",
-    "searchLanguage": "Hledat jazyk…"
+    "searchLanguage": "Hledat jazyk…",
+    "install": "Nainstalovat",
+    "installing": "Instalace…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Archiv vytvořen",
     "pdfMerged": "PDF sloučeny",
     "pdfFromImages": "PDF vytvořen z obrázků",
-    "canceled": "Zrušeno"
+    "canceled": "Zrušeno",
+    "engineInstalled": "{name} nainstalován",
+    "engineInstallFailed": "Nepodařilo se nainstalovat: {name}"
   }
 }

@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "한국어", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "모든 파일을 우아하게 변환하고 압축" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "한국어",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "모든 파일을 우아하게 변환하고 압축"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "변환",
     "compress": "압축",
@@ -97,7 +109,9 @@
     "shortcutAdd": "파일 추가",
     "shortcutStart": "시작",
     "shortcutCancel": "취소",
-    "searchLanguage": "언어 검색…"
+    "searchLanguage": "언어 검색…",
+    "install": "설치",
+    "installing": "설치 중…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "압축 파일이 생성되었습니다",
     "pdfMerged": "PDF가 병합되었습니다",
     "pdfFromImages": "이미지에서 PDF를 만들었습니다",
-    "canceled": "취소되었습니다"
+    "canceled": "취소되었습니다",
+    "engineInstalled": "{name} 설치됨",
+    "engineInstallFailed": "{name} 설치 실패"
   }
 }

@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Bahasa Indonesia", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Konversi & kompres apa saja, dengan gaya" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "Bahasa Indonesia",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Konversi & kompres apa saja, dengan gaya"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "Konversi",
     "compress": "Kompres",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Tambah file",
     "shortcutStart": "Mulai",
     "shortcutCancel": "Batalkan",
-    "searchLanguage": "Cari bahasa…"
+    "searchLanguage": "Cari bahasa…",
+    "install": "Pasang",
+    "installing": "Memasang…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Arsip dibuat",
     "pdfMerged": "PDF digabungkan",
     "pdfFromImages": "PDF dibuat dari gambar",
-    "canceled": "Dibatalkan"
+    "canceled": "Dibatalkan",
+    "engineInstalled": "{name} terpasang",
+    "engineInstallFailed": "Gagal memasang {name}"
   }
 }

@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Svenska", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Konvertera och komprimera allt — med stil" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "Svenska",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Konvertera och komprimera allt — med stil"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "Konvertera",
     "compress": "Komprimera",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Lägg till filer",
     "shortcutStart": "Starta",
     "shortcutCancel": "Avbryt",
-    "searchLanguage": "Sök språk…"
+    "searchLanguage": "Sök språk…",
+    "install": "Installera",
+    "installing": "Installerar…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Arkiv skapat",
     "pdfMerged": "PDF:er slogs ihop",
     "pdfFromImages": "PDF skapad från bilder",
-    "canceled": "Avbruten"
+    "canceled": "Avbruten",
+    "engineInstalled": "{name} installerad",
+    "engineInstallFailed": "Kunde inte installera {name}"
   }
 }

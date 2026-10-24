@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Türkçe", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Her şeyi dönüştürün ve sıkıştırın — şık biçimde" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "Türkçe",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Her şeyi dönüştürün ve sıkıştırın — şık biçimde"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "Dönüştür",
     "compress": "Sıkıştır",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Dosya ekle",
     "shortcutStart": "Başlat",
     "shortcutCancel": "İptal",
-    "searchLanguage": "Dil ara…"
+    "searchLanguage": "Dil ara…",
+    "install": "Yükle",
+    "installing": "Yükleniyor…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Arşiv oluşturuldu",
     "pdfMerged": "PDF'ler birleştirildi",
     "pdfFromImages": "Görsellerden PDF oluşturuldu",
-    "canceled": "İptal edildi"
+    "canceled": "İptal edildi",
+    "engineInstalled": "{name} yüklendi",
+    "engineInstallFailed": "{name} yüklenemedi"
   }
 }

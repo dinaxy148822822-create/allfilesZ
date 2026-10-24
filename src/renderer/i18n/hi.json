@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "हिन्दी", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "कुछ भी बदलें और संकुचित करें — सुंदर अंदाज़ में" },
-  "units": { "b": "बा", "kb": "केबी", "mb": "एमबी", "gb": "जीबी", "tb": "टीबी" },
+  "meta": {
+    "name": "हिन्दी",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "कुछ भी बदलें और संकुचित करें — सुंदर अंदाज़ में"
+  },
+  "units": {
+    "b": "बा",
+    "kb": "केबी",
+    "mb": "एमबी",
+    "gb": "जीबी",
+    "tb": "टीबी"
+  },
   "nav": {
     "convert": "बदलें",
     "compress": "संकुचित करें",
@@ -97,7 +109,9 @@
     "shortcutAdd": "फ़ाइलें जोड़ें",
     "shortcutStart": "शुरू करें",
     "shortcutCancel": "रद्द करें",
-    "searchLanguage": "भाषा खोजें…"
+    "searchLanguage": "भाषा खोजें…",
+    "install": "इंस्टॉल करें",
+    "installing": "इंस्टॉल हो रहा है…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "आर्काइव बन गया",
     "pdfMerged": "PDF मिला दी गईं",
     "pdfFromImages": "चित्रों से PDF बनाई गई",
-    "canceled": "रद्द किया गया"
+    "canceled": "रद्द किया गया",
+    "engineInstalled": "{name} इंस्टॉल हुआ",
+    "engineInstallFailed": "{name} इंस्टॉल नहीं हो सका"
   }
 }

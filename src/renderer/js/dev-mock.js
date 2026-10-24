@@ -91,6 +91,10 @@
       libreoffice: { name: 'LibreOffice', found: false },
       ghostscript: { name: 'Ghostscript', found: true }
     }),
+    installEngine: async (engine) => {
+      await sleep(1500);
+      return { ok: true, tools: { ffmpeg: { found: true }, libreoffice: { found: engine === 'libreoffice' }, ghostscript: { found: true } } };
+    },
     cancelJob: async () => true,
     winControl: () => {},
     onProgress: (cb) => {

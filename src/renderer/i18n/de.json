@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Deutsch", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Alles konvertieren & komprimieren — elegant" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "Deutsch",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Alles konvertieren & komprimieren — elegant"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "Konvertieren",
     "compress": "Komprimieren",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Dateien hinzufügen",
     "shortcutStart": "Starten",
     "shortcutCancel": "Abbrechen",
-    "searchLanguage": "Sprache suchen…"
+    "searchLanguage": "Sprache suchen…",
+    "install": "Installieren",
+    "installing": "Wird installiert…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Archiv erstellt",
     "pdfMerged": "PDFs zusammengeführt",
     "pdfFromImages": "PDF aus Bildern erstellt",
-    "canceled": "Abgebrochen"
+    "canceled": "Abgebrochen",
+    "engineInstalled": "{name} installiert",
+    "engineInstallFailed": "{name} konnte nicht installiert werden"
   }
 }

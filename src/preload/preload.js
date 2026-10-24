@@ -25,6 +25,7 @@ contextBridge.exposeInMainWorld('allfilesZ', {
   pdfMerge: (payload) => ipcRenderer.invoke('pdf:merge', payload),
   pdfFromImages: (payload) => ipcRenderer.invoke('pdf:from-images', payload),
   detectTools: () => ipcRenderer.invoke('tools:detect'),
+  installEngine: (engine) => ipcRenderer.invoke('engines:install', { engine }),
   cancelJob: (requestId) => ipcRenderer.invoke('jobs:cancel', requestId),
 
   // window controls (custom titlebar)

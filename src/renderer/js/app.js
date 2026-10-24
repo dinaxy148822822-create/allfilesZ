@@ -20,6 +20,7 @@ const state = {
   compress: [],
   archive: [],
   running: false,
+  installingEngine: null,
   cancelFlags: new Set(),
   reqMap: new Map() // requestId -> item
 };
@@ -443,14 +444,46 @@ function renderEngines() {
     { key: 'libreoffice', label: I18N.t('engine.libreoffice'), found: t.libreoffice && t.libreoffice.found, hint: t.libreoffice && t.libreoffice.found ? I18N.t('engine.found') : I18N.t('engine.libreofficeHint') },
     { key: 'ghostscript', label: I18N.t('engine.ghostscript'), found: t.ghostscript && t.ghostscript.found, hint: t.ghostscript && t.ghostscript.found ? I18N.t('engine.found') : I18N.t('engine.ghostscriptHint') }
   ];
+  const canInstall = (key) =>
+    key !== 'ffmpeg' && state.appInfo.platform === 'win32' &&
+    engines.find((e) => e.key === key) && !engines.find((e) => e.key === key).found &&
+    state.appInfo.isElectron !== false;
   $('#engineList').innerHTML = engines.map((e) => `
     <div class="engine">
       <span class="dot ${e.found ? 'on' : 'off'}"></span>
       <span>${esc(e.label)}</span>
+      ${canInstall(e.key)
+        ? `<button class="btn ghost sm engine-install" data-engine="${e.key}" ${state.installingEngine ? 'disabled' : ''}>
+             ${state.installingEngine === e.key ? esc(I18N.t('settings.installing')) : esc(I18N.t('settings.install'))}
+           </button>`
+        : ''}
       <span class="hint">${esc(e.hint)}</span>
     </div>`).join('');
+  $$('#engineList .engine-install').forEach((b) => {
+    b.onclick = () => installEngine(b.dataset.engine);
+  });
   $('#statusChips').innerHTML = engines.map((e) =>
     `<span class="chip"><span class="dot ${e.found ? 'on' : 'off'}"></span>${esc(e.label)}</span>`).join('');
+}
+
+async function installEngine(key) {
+  if (state.installingEngine) return;
+  state.installingEngine = key;
+  renderEngines();
+  toast('info', I18N.t('settings.installing'));
+  try {
+    const res = await api.installEngine(key);
+    if (res.tools) state.tools = res.tools;
+    const label = I18N.t(`engine.${key}`);
+    if (res.ok) toast('ok', I18N.t('toast.engineInstalled', { name: label }));
+    else toast('err', I18N.t('toast.engineInstallFailed', { name: label }), res.error);
+  } catch (e) {
+    toast('err', I18N.t('toast.engineInstallFailed', { name: I18N.t(`engine.${key}`) }), String(e && e.message || e));
+  } finally {
+    state.installingEngine = null;
+    if (!state.tools || !state.tools.ghostscript) { try { state.tools = await api.detectTools(); } catch (_) {} }
+    renderEngines();
+  }
 }
 
 /* --------------------------------------------------------------- language */

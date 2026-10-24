@@ -1,7 +1,19 @@
 {
-  "meta": { "name": "Nederlands", "dir": "ltr" },
-  "app": { "name": "allfilesZ", "tagline": "Converteer en comprimeer alles, met stijl" },
-  "units": { "b": "B", "kb": "KB", "mb": "MB", "gb": "GB", "tb": "TB" },
+  "meta": {
+    "name": "Nederlands",
+    "dir": "ltr"
+  },
+  "app": {
+    "name": "allfilesZ",
+    "tagline": "Converteer en comprimeer alles, met stijl"
+  },
+  "units": {
+    "b": "B",
+    "kb": "KB",
+    "mb": "MB",
+    "gb": "GB",
+    "tb": "TB"
+  },
   "nav": {
     "convert": "Converteren",
     "compress": "Comprimeren",
@@ -97,7 +109,9 @@
     "shortcutAdd": "Bestanden toevoegen",
     "shortcutStart": "Starten",
     "shortcutCancel": "Annuleren",
-    "searchLanguage": "Taal zoeken…"
+    "searchLanguage": "Taal zoeken…",
+    "install": "Installeren",
+    "installing": "Installeren…"
   },
   "engine": {
     "ffmpeg": "ffmpeg",
@@ -116,6 +130,8 @@
     "archiveDone": "Archief gemaakt",
     "pdfMerged": "PDF's samengevoegd",
     "pdfFromImages": "PDF van afbeeldingen gemaakt",
-    "canceled": "Geannuleerd"
+    "canceled": "Geannuleerd",
+    "engineInstalled": "{name} geïnstalleerd",
+    "engineInstallFailed": "Kan {name} niet installeren"
   }
 }
