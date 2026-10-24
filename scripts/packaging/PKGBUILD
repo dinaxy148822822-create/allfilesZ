@@ -3,7 +3,7 @@
 
 pkgname=allfilesz-bin
 _pkgname=allfilesZ
-pkgver=1.0.1
+pkgver=1.1.0
 pkgrel=1
 pkgdesc="Glassy cross-platform file converter & compressor — images, audio, video, documents, archives"
 arch=('x86_64' 'aarch64')

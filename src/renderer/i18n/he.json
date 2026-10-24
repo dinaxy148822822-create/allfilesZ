@@ -111,7 +111,8 @@
     "shortcutCancel": "ביטול",
     "searchLanguage": "חיפוש שפה…",
     "install": "התקנה",
-    "installing": "מתקין…"
+    "installing": "מתקין…",
+    "activity": "פעילות המרה"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

@@ -111,7 +111,8 @@
     "shortcutCancel": "Cancelar",
     "searchLanguage": "Procurar idioma…",
     "install": "Instalar",
-    "installing": "Instalando…"
+    "installing": "Instalando…",
+    "activity": "Atividade de conversão"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

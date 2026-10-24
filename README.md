@@ -143,4 +143,4 @@ through a typed IPC bridge in the main process.
 
 [MIT](LICENSE) © allfilesZ contributors
 
-<div align="center"><img src="docs/screenshots/compress-dark.png" width="640" alt="Compress page" /></div>
+<div align="center"><img src="docs/screenshots/settings-light.png" width="640" alt="Settings — engines and activity graph" /></div>

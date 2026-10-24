@@ -111,7 +111,8 @@
     "shortcutCancel": "キャンセル",
     "searchLanguage": "言語を検索…",
     "install": "インストール",
-    "installing": "インストール中…"
+    "installing": "インストール中…",
+    "activity": "変換アクティビティ"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

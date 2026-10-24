@@ -111,7 +111,8 @@
     "shortcutCancel": "Annuleren",
     "searchLanguage": "Taal zoeken…",
     "install": "Installeren",
-    "installing": "Installeren…"
+    "installing": "Installeren…",
+    "activity": "Conversie-activiteit"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

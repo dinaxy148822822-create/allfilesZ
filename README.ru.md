@@ -17,7 +17,7 @@
 
 [Скачать](#установка) · [Возможности](#возможности) · [English version](README.md)
 
-<img src="docs/screenshots/convert-light-ru.png" width="880" alt="allfilesZ — светлая тема" />
+<img src="docs/screenshots/convert-dark.png" width="880" alt="allfilesZ — Convert page" />
 
 </div>
 

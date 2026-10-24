@@ -111,7 +111,8 @@
     "shortcutCancel": "Отменить",
     "searchLanguage": "Поиск языка…",
     "install": "Установить",
-    "installing": "Установка…"
+    "installing": "Установка…",
+    "activity": "История конвертаций"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

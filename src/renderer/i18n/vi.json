@@ -111,7 +111,8 @@
     "shortcutCancel": "Hủy",
     "searchLanguage": "Tìm ngôn ngữ…",
     "install": "Cài đặt",
-    "installing": "Đang cài đặt…"
+    "installing": "Đang cài đặt…",
+    "activity": "Hoạt động chuyển đổi"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

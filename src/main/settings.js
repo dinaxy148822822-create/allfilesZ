@@ -7,7 +7,7 @@ const { app } = require('electron');
 const DEFAULTS = {
   lang: null,            // null = auto-detect from system locale
   theme: 'auto',         // auto | dark | light
-  accent: 'teal',        // teal | violet | pink | blue | green | orange
+  accent: 'blue',        // GitHub-blue by default; teal | violet | pink | blue | green | orange
   outDir: null,          // null = <Downloads>/allfilesZ
   preset: 'balanced',    // high | balanced | tiny | custom
   imageQuality: 82,      // 1..100
@@ -15,7 +15,9 @@ const DEFAULTS = {
   videoPreset: 'medium', // ffmpeg preset
   audioBitrate: 192,     // kbps
   archiveLevel: 6,       // 0..9
-  overwritePolicy: 'keepBoth' // keepBoth | overwrite
+  overwritePolicy: 'keepBoth', // keepBoth | overwrite
+  starred: false,        // repo-bar parody state
+  activity: {}           // ISO-date -> conversions done (activity graph)
 };
 
 function settingsPath() {

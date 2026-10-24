@@ -111,7 +111,8 @@
     "shortcutCancel": "Zrušit",
     "searchLanguage": "Hledat jazyk…",
     "install": "Nainstalovat",
-    "installing": "Instalace…"
+    "installing": "Instalace…",
+    "activity": "Aktivita převodů"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

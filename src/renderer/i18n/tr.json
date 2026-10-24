@@ -111,7 +111,8 @@
     "shortcutCancel": "İptal",
     "searchLanguage": "Dil ara…",
     "install": "Yükle",
-    "installing": "Yükleniyor…"
+    "installing": "Yükleniyor…",
+    "activity": "Dönüşüm etkinliği"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

@@ -111,7 +111,8 @@
     "shortcutCancel": "Batalkan",
     "searchLanguage": "Cari bahasa…",
     "install": "Pasang",
-    "installing": "Memasang…"
+    "installing": "Memasang…",
+    "activity": "Aktivitas konversi"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

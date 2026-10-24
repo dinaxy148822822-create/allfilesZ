@@ -111,7 +111,8 @@
     "shortcutCancel": "إلغاء",
     "searchLanguage": "ابحث عن لغة…",
     "install": "تثبيت",
-    "installing": "جارٍ التثبيت…"
+    "installing": "جارٍ التثبيت…",
+    "activity": "نشاط التحويل"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

@@ -111,7 +111,8 @@
     "shortcutCancel": "취소",
     "searchLanguage": "언어 검색…",
     "install": "설치",
-    "installing": "설치 중…"
+    "installing": "설치 중…",
+    "activity": "변환 활동"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

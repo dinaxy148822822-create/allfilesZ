@@ -111,7 +111,8 @@
     "shortcutCancel": "取消工作",
     "searchLanguage": "搜尋語言…",
     "install": "安裝",
-    "installing": "安裝中…"
+    "installing": "安裝中…",
+    "activity": "轉換動態"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

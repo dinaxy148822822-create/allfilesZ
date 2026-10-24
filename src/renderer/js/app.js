@@ -256,12 +256,16 @@ function updatePanels() {
   $('#convertPanel').classList.toggle('hidden', !has('convert'));
   $('#compressPanel').classList.toggle('hidden', !has('compress'));
   $('#archivePanel').classList.toggle('hidden', !has('archive'));
+  // GitHub-parody counters next to the nav items
+  const setC = (sel, n) => { const el = $(sel); if (el) el.textContent = n > 0 ? String(n) : ''; };
+  setC('#cntConvert', state.convert.length);
+  setC('#cntCompress', state.compress.length);
+  setC('#cntArchive', state.archive.length);
   if (!state.running) {
     $('#btnConvert').disabled = !has('convert') || !state.convert.some((f) => f.type !== 'pdf' && f.type !== 'other');
     $('#btnCompress').disabled = !has('compress');
     $('#btnArchive').disabled = !has('archive');
   }
-  // summary in status bar
   const counts = { convert: state.convert.length, compress: state.compress.length, archive: state.archive.length };
   const active = Object.values(counts).reduce((a, b) => a + b, 0);
   if (!state.running) setStatus(active ? I18N.t('common.filesCount', { n: active }) : I18N.t('common.ready'));
@@ -345,6 +349,7 @@ async function runOne(item, kind, extra) {
       item.outPath = res.outPath;
       item.outSize = res.outSize;
       item.inSize = res.inSize || item.size;
+      if (item.status === 'done') recordActivity();
     } else {
       item.status = 'error'; item.error = res.error;
       toast('err', item.name, res.error);
@@ -363,6 +368,62 @@ function switchPage(page) {
   $$('.nav-item').forEach((b) => b.classList.toggle('active', b.dataset.page === page));
   $$('.page').forEach((p) => p.classList.toggle('active', p.id === `page-${page}`));
   updateCancelButtons();
+  if (page === 'settings') renderActivity();
+}
+
+/* ------------------------------------------------ repo bar (GitHub parody) */
+
+function applyStar() {
+  const starred = !!state.settings.starred;
+  $('#starCount').textContent = 128 + (starred ? 1 : 0);
+  $('#starLabel').textContent = starred ? 'Starred' : 'Star';
+  $('#btnStar').style.color = starred ? 'var(--warn)' : '';
+}
+
+function initRepoBar() {
+  $('#repoVersion').textContent = `v${state.appInfo.version}`;
+  applyStar();
+  $('#btnStar').onclick = () => {
+    state.settings.starred = !state.settings.starred;
+    saveSettings({ starred: state.settings.starred });
+    applyStar();
+    toast('info', state.settings.starred ? '★ Starred — спасибо! (это пародия, звёздочки декоративные)' : 'Unstarred');
+  };
+  $('#btnFork').onclick = () => {
+    const forks = $('#btnFork .counter');
+    forks.textContent = String(Number(forks.textContent || 7) + 1);
+    toast('ok', '⑂ «Форк» создан… шутка 😄 Это allfilesZ, а не GitHub.');
+  };
+}
+
+/* --------------------------------------- conversion activity (parody graph) */
+
+function recordActivity(n = 1) {
+  const today = new Date().toISOString().slice(0, 10);
+  const a = Object.assign({}, state.settings.activity || {});
+  a[today] = (a[today] || 0) + n;
+  const keys = Object.keys(a).sort();
+  while (keys.length > 130) delete a[keys.shift()];
+  state.settings.activity = a;
+  saveSettings({ activity: a });
+}
+
+function renderActivity() {
+  const el = $('#activityGraph');
+  if (!el) return;
+  const a = state.settings.activity || {};
+  const weeks = 18;
+  const today = new Date();
+  const cells = [];
+  for (let i = weeks * 7 - 1; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const key = d.toISOString().slice(0, 10);
+    const n = a[key] || 0;
+    const lvl = n === 0 ? '' : n <= 2 ? 'l1' : n <= 5 ? 'l2' : n <= 10 ? 'l3' : 'l4';
+    cells.push(`<span class="cell ${lvl}" title="${key}: ${n}"></span>`);
+  }
+  el.innerHTML = cells.join('');
 }
 
 /* ------------------------------------------------------------ page: start */
@@ -403,7 +464,7 @@ async function startArchive() {
       format: $('#archFormat').value,
       level: Number($('#archLevel').value)
     });
-    if (res.ok) toast('ok', I18N.t('toast.archiveDone'), res.outPath);
+    if (res.ok) { toast('ok', I18N.t('toast.archiveDone'), res.outPath); recordActivity(); }
     else toast('err', I18N.t('common.failed'), res.error);
   } catch (e) {
     toast('err', I18N.t('common.failed'), String(e && e.message || e));
@@ -579,9 +640,10 @@ async function init() {
   // --- output dir
   state.outDir = state.settings.outDir || state.appInfo.outDirDefault;
 
-  // --- version chips
+  // --- version chips + repo bar parody
   $('#chipVersion').textContent = `v${state.appInfo.version}`;
   $('#chipVersion2').textContent = `v${state.appInfo.version}`;
+  initRepoBar();
 
   // --- window controls
   $('#btnClose').onclick = () => api.winControl('close');
@@ -686,14 +748,14 @@ async function init() {
     const pdfs = state.archive.filter((f) => f.type === 'pdf').map((f) => f.path);
     if (pdfs.length < 2) return toast('info', I18N.t('archive.needPdfFiles'));
     const res = await api.pdfMerge({ requestId: uid(), files: pdfs, outDir: state.outDir });
-    if (res.ok) toast('ok', I18N.t('toast.pdfMerged'), res.outPath);
+    if (res.ok) { toast('ok', I18N.t('toast.pdfMerged'), res.outPath); recordActivity(); }
     else toast('err', I18N.t('common.failed'), res.error);
   };
   $('#btnPdfImg').onclick = async () => {
     const imgs = state.archive.filter((f) => f.type === 'image').map((f) => f.path);
     if (!imgs.length) return toast('info', I18N.t('archive.needPdfImages'));
     const res = await api.pdfFromImages({ requestId: uid(), files: imgs, outDir: state.outDir });
-    if (res.ok) toast('ok', I18N.t('toast.pdfFromImages'), res.outPath);
+    if (res.ok) { toast('ok', I18N.t('toast.pdfFromImages'), res.outPath); recordActivity(); }
     else toast('err', I18N.t('common.failed'), res.error);
   };
 

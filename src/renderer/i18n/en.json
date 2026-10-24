@@ -111,7 +111,8 @@
     "shortcutCancel": "Cancel job",
     "searchLanguage": "Search language…",
     "install": "Install",
-    "installing": "Installing…"
+    "installing": "Installing…",
+    "activity": "Conversion activity"
   },
   "engine": {
     "ffmpeg": "ffmpeg",

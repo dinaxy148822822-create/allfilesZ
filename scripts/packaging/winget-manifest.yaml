@@ -2,7 +2,7 @@
 # after each release. Reference copy for maintainers.
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.6.0.schema.json
 PackageIdentifier: dinaxy148822822-create.allfilesZ
-PackageVersion: 1.0.1
+PackageVersion: 1.1.0
 PackageName: allfilesZ
 Publisher: dinaxy148822822-create
 License: MIT
@@ -11,7 +11,7 @@ PackageUrl: https://github.com/dinaxy148822822-create/allfilesZ
 Installers:
   - Architecture: x64
     InstallerType: nullsoft
-    InstallerUrl: https://github.com/dinaxy148822822-create/allfilesZ/releases/download/v1.0.1/allfilesZ-1.0.1-setup-x64.exe
+    InstallerUrl: https://github.com/dinaxy148822822-create/allfilesZ/releases/download/v1.1.0/allfilesZ-1.1.0-setup-x64.exe
     InstallerSha256: <fill-after-release>
 ManifestType: singleton
 ManifestVersion: 1.6.0
